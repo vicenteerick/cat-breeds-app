@@ -1,0 +1,10 @@
+import Foundation
+
+// swiftlint:disable all
+public struct EnvironmentVars {
+    /// Generated using 'EnvironmentVars.stencil' template
+    public static let baseUrl = "{{ argument.BASE_URL }}"
+
+    public static let apiKey = "{{ argument.API_KEY }}"
+}
+// swiftlint:enable all

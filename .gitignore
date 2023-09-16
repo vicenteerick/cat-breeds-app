@@ -22,7 +22,7 @@ playground.xcworkspace
 /*.gcno
 
 ### Environment Variables Files ###
-.env.sh
+.env
 *EnvironmentVars.generated.swift
 
 # Swift Package Manager
