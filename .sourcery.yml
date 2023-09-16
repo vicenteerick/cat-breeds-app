@@ -1,0 +1,13 @@
+sources:
+  - .
+package:
+  path: ./SharedSource/Sources
+  target: SharedSource
+templates:
+  - ./SharedSource/Sources/SharedSource/Template/EnvironmentVars.stencil
+output:
+  path: ./SharedSource/Sources/SharedSource/Environment
+
+args:
+  BASE_URL: ${BASE_URL}
+  API_KEY: ${API_KEY}

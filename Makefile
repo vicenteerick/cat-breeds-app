@@ -7,19 +7,16 @@ help: ## Show this help.
 	@grep -E '^[a-zA-Z_-]+:.?##' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "     \033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 
-install: ## Install all tools
-	@make setup
+setup: ## Install all tools
+	@make setup_tools
 
 
-setup: \
-	setup_env \
+setup_tools: \
 	install_homebrew \
 	install_swiftlint \
 	install_sourcery \
+	config_sourcery \
 
-setup_env:
-    env
-    
 install_homebrew: ## Check if Homebrew is installed, otherwise install it
 	@chmod +x "./Script/install_homebrew.sh"
 	@./Script/install_homebrew.sh
@@ -34,5 +31,10 @@ install_sourcery: ## Install sourcery
 	@echo "Installing sourcery..."
 	@brew install sourcery
 	@echo "Sourcery installed."
+	@sourcery --config ".sourcery.yml"
+	@echo "Sourcery configured."
+
+config_sourcery: ## Install sourcery
+	@echo "Configuring sourcery..."
 	@sourcery --config ".sourcery.yml"
 	@echo "Sourcery configured."

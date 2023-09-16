@@ -16,6 +16,7 @@
 		742D40AB2AB5CEA100514A25 /* CatBreedsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40AA2AB5CEA100514A25 /* CatBreedsAppTests.swift */; };
 		742D40B52AB5CEA100514A25 /* CatBreedsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B42AB5CEA100514A25 /* CatBreedsAppUITests.swift */; };
 		742D40B72AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */; };
+		74CF7ED32AB5F65A000CBD35 /* SharedSource in Frameworks */ = {isa = PBXBuildFile; productRef = 74CF7ED22AB5F65A000CBD35 /* SharedSource */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CF7ED32AB5F65A000CBD35 /* SharedSource in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,7 @@
 				742D40A92AB5CEA100514A25 /* CatBreedsAppTests */,
 				742D40B32AB5CEA100514A25 /* CatBreedsAppUITests */,
 				742D40912AB5CE9F00514A25 /* Products */,
+				74CF7ED12AB5F65A000CBD35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +130,13 @@
 			path = CatBreedsAppUITests;
 			sourceTree = "<group>";
 		};
+		74CF7ED12AB5F65A000CBD35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,15 +144,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 742D40BA2AB5CEA100514A25 /* Build configuration list for PBXNativeTarget "CatBreedsApp" */;
 			buildPhases = (
+				74CF7ECF2AB5E7AA000CBD35 /* Envrionment Codegen */,
 				742D408C2AB5CE9F00514A25 /* Sources */,
 				742D408D2AB5CE9F00514A25 /* Frameworks */,
 				742D408E2AB5CE9F00514A25 /* Resources */,
+				74CF7ED02AB5F138000CBD35 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CatBreedsApp;
+			packageProductDependencies = (
+				74CF7ED22AB5F65A000CBD35 /* SharedSource */,
+			);
 			productName = CatBreedsApp;
 			productReference = 742D40902AB5CE9F00514A25 /* CatBreedsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +267,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		74CF7ECF2AB5E7AA000CBD35 /* Envrionment Codegen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Envrionment Codegen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\nexport PATH=\"$PATH:/opt/homebrew/bin\"\ncd ../\nmake config_sourcery\n";
+		};
+		74CF7ED02AB5F138000CBD35 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\ncd ../\nsource \"./Script/swiftlint.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		742D408C2AB5CE9F00514A25 /* Sources */ = {
@@ -604,6 +660,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74CF7ED22AB5F65A000CBD35 /* SharedSource */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedSource;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 742D40882AB5CE9E00514A25 /* Project object */;
 }
