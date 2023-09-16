@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742625FF2AB627D000C53FE1 /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 742625FE2AB627D000C53FE1 /* DependencyContainer */; };
+		742626012AB6283800C53FE1 /* SharedSource in Frameworks */ = {isa = PBXBuildFile; productRef = 742626002AB6283800C53FE1 /* SharedSource */; };
 		742D40942AB5CE9F00514A25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40932AB5CE9F00514A25 /* AppDelegate.swift */; };
 		742D40962AB5CE9F00514A25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40952AB5CE9F00514A25 /* SceneDelegate.swift */; };
 		742D40982AB5CE9F00514A25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40972AB5CE9F00514A25 /* ViewController.swift */; };
@@ -16,7 +18,6 @@
 		742D40AB2AB5CEA100514A25 /* CatBreedsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40AA2AB5CEA100514A25 /* CatBreedsAppTests.swift */; };
 		742D40B52AB5CEA100514A25 /* CatBreedsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B42AB5CEA100514A25 /* CatBreedsAppUITests.swift */; };
 		742D40B72AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */; };
-		74CF7ED32AB5F65A000CBD35 /* SharedSource in Frameworks */ = {isa = PBXBuildFile; productRef = 74CF7ED22AB5F65A000CBD35 /* SharedSource */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74CF7ED32AB5F65A000CBD35 /* SharedSource in Frameworks */,
+				742626012AB6283800C53FE1 /* SharedSource in Frameworks */,
+				742625FF2AB627D000C53FE1 /* DependencyContainer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +158,8 @@
 			);
 			name = CatBreedsApp;
 			packageProductDependencies = (
-				74CF7ED22AB5F65A000CBD35 /* SharedSource */,
+				742625FE2AB627D000C53FE1 /* DependencyContainer */,
+				742626002AB6283800C53FE1 /* SharedSource */,
 			);
 			productName = CatBreedsApp;
 			productReference = 742D40902AB5CE9F00514A25 /* CatBreedsApp.app */;
@@ -662,7 +665,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		74CF7ED22AB5F65A000CBD35 /* SharedSource */ = {
+		742625FE2AB627D000C53FE1 /* DependencyContainer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DependencyContainer;
+		};
+		742626002AB6283800C53FE1 /* SharedSource */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedSource;
 		};

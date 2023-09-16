@@ -5,6 +5,9 @@
       location = "group:CatBreedsApp/CatBreedsApp.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:/Users/erickvicente/Documents/Projetos/cat-breeds-app/DependencyContainer">
+   </FileRef>
+   <FileRef
       location = "group:/Users/erickvicente/Documents/Projetos/cat-breeds-app/Network">
    </FileRef>
    <FileRef

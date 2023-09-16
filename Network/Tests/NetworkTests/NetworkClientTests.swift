@@ -89,9 +89,7 @@ final class NetworkClientPublisherTests: XCTestCase {
         let expect = expectation(description: "Error")
 
         let cancellable = sut.request(setup: endpoint)
-            .mapError { error in
-                return error
-            }
+            .mapError { $0 }
             .sink { [weak self] completion in
                 serviceError = self?.handleRequestFailure(completion: completion)
                 expect.fulfill()
@@ -110,9 +108,7 @@ final class NetworkClientPublisherTests: XCTestCase {
         let expect = expectation(description: "Error")
 
         let cancellable = sut.request(setup: endpoint)
-            .mapError { error in
-                return error
-            }
+            .mapError { $0 }
             .sink { [weak self] completion in
                 serviceError = self?.handleRequestFailure(completion: completion)
                 expect.fulfill()

@@ -13,7 +13,7 @@ class URLSessionMock: URLSessionTaskable {
     }
 
     func dataTaskAnyPublisher(for request: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), URLError> {
-        return Just((data: data ?? Data(), response: urlResponse ?? OtherURLResponseMock()))
+        Just((data: data ?? Data(), response: urlResponse ?? OtherURLResponseMock()))
             .setFailureType(to: URLError.self)
             .eraseToAnyPublisher()
     }

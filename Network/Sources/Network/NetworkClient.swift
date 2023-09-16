@@ -6,7 +6,6 @@ public protocol ClientPublishing {
 }
 
 public class NetworkClient: ClientPublishing, ObservableObject {
-
     private var baseUrl: String
     private let session: URLSessionTaskable
 
@@ -16,7 +15,7 @@ public class NetworkClient: ClientPublishing, ObservableObject {
         return deconder
     }()
 
-    init(baseUrl: String, session: URLSessionTaskable = URLSession.shared) {
+    public init(baseUrl: String, session: URLSessionTaskable = URLSession.shared) {
         self.baseUrl = baseUrl
         self.session = session
     }

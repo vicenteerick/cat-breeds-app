@@ -2,7 +2,7 @@ import Foundation
 @testable import Network
 
 extension API.Version {
-    static var v1: API.Version { return API.Version(rawValue: "/v1")! }
+    static var v1: API.Version { API.Version(rawValue: "/v1")! }
 }
 
 enum EndpointMock: Endpoint {
