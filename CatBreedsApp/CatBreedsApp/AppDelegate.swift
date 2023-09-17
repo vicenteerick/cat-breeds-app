@@ -1,17 +1,7 @@
-//
-//  AppDelegate.swift
-//  CatBreedsApp
-//
-//  Created by Erick Vicente on 16/09/23.
-//
-
 import UIKit
-import DependencyContainer
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    private var dependencies: HasDependencies = { DependencyBuilder.build() }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

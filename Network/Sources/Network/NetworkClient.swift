@@ -5,7 +5,7 @@ public protocol ClientPublishing {
     func request<T: Decodable>(setup: Endpoint) -> AnyPublisher<T, ServiceError>
 }
 
-public class NetworkClient: ClientPublishing, ObservableObject {
+public final class NetworkClient: ClientPublishing, ObservableObject {
     private var baseUrl: String
     private let session: URLSessionTaskable
 

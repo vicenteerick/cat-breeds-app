@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreedListViewController" customModule="CatBreedsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="BIs-XF-zJl" id="Pho-v7-usM"/>
+                <outlet property="textField" destination="MUX-ao-3yb" id="Wt0-Xq-aum"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUX-ao-3yb">
+                    <rect key="frame" x="16" y="59" width="361" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-XF-zJl">
+                    <rect key="frame" x="0.0" y="101" width="393" height="751"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kSw-7R-4kZ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="BIs-XF-zJl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Ji-bf-W2C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MUX-ao-3yb" secondAttribute="trailing" constant="16" id="H07-AX-ofo"/>
+                <constraint firstItem="MUX-ao-3yb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="aKl-A5-iJp"/>
+                <constraint firstItem="BIs-XF-zJl" firstAttribute="top" secondItem="MUX-ao-3yb" secondAttribute="bottom" constant="8" id="bt8-58-Bcj"/>
+                <constraint firstAttribute="bottom" secondItem="BIs-XF-zJl" secondAttribute="bottom" id="fmq-Xw-rWQ"/>
+                <constraint firstItem="MUX-ao-3yb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nDj-Bs-Aan"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BIs-XF-zJl" secondAttribute="trailing" id="ooQ-BP-oJC"/>
+            </constraints>
+            <point key="canvasLocation" x="115" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

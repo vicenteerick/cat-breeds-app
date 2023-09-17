@@ -9,15 +9,19 @@
 /* Begin PBXBuildFile section */
 		742625FF2AB627D000C53FE1 /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = 742625FE2AB627D000C53FE1 /* DependencyContainer */; };
 		742626012AB6283800C53FE1 /* SharedSource in Frameworks */ = {isa = PBXBuildFile; productRef = 742626002AB6283800C53FE1 /* SharedSource */; };
+		742626092AB6326B00C53FE1 /* BreedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742626072AB6326B00C53FE1 /* BreedListViewController.swift */; };
+		7426260A2AB6326B00C53FE1 /* BreedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 742626082AB6326B00C53FE1 /* BreedListViewController.xib */; };
+		7426260D2AB634C900C53FE1 /* UIViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7426260C2AB634C900C53FE1 /* UIViewController+Name.swift */; };
+		7426260F2AB63E8E00C53FE1 /* BreedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7426260E2AB63E8E00C53FE1 /* BreedListViewModel.swift */; };
 		742D40942AB5CE9F00514A25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40932AB5CE9F00514A25 /* AppDelegate.swift */; };
 		742D40962AB5CE9F00514A25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40952AB5CE9F00514A25 /* SceneDelegate.swift */; };
-		742D40982AB5CE9F00514A25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40972AB5CE9F00514A25 /* ViewController.swift */; };
-		742D409B2AB5CE9F00514A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742D40992AB5CE9F00514A25 /* Main.storyboard */; };
 		742D409D2AB5CEA100514A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742D409C2AB5CEA100514A25 /* Assets.xcassets */; };
 		742D40A02AB5CEA100514A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742D409E2AB5CEA100514A25 /* LaunchScreen.storyboard */; };
 		742D40AB2AB5CEA100514A25 /* CatBreedsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40AA2AB5CEA100514A25 /* CatBreedsAppTests.swift */; };
 		742D40B52AB5CEA100514A25 /* CatBreedsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B42AB5CEA100514A25 /* CatBreedsAppUITests.swift */; };
 		742D40B72AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */; };
+		74BD71122AB72CD8004E97DB /* BreedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BD71102AB72CD8004E97DB /* BreedCollectionViewCell.swift */; };
+		74BD71132AB72CD8004E97DB /* BreedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BD71112AB72CD8004E97DB /* BreedCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		742626072AB6326B00C53FE1 /* BreedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewController.swift; sourceTree = "<group>"; };
+		742626082AB6326B00C53FE1 /* BreedListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedListViewController.xib; sourceTree = "<group>"; };
+		7426260C2AB634C900C53FE1 /* UIViewController+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Name.swift"; sourceTree = "<group>"; };
+		7426260E2AB63E8E00C53FE1 /* BreedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewModel.swift; sourceTree = "<group>"; };
 		742D40902AB5CE9F00514A25 /* CatBreedsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatBreedsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		742D40932AB5CE9F00514A25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		742D40952AB5CE9F00514A25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		742D40972AB5CE9F00514A25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		742D409A2AB5CE9F00514A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		742D409C2AB5CEA100514A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		742D409F2AB5CEA100514A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		742D40A12AB5CEA100514A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +57,8 @@
 		742D40B02AB5CEA100514A25 /* CatBreedsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatBreedsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		742D40B42AB5CEA100514A25 /* CatBreedsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedsAppUITests.swift; sourceTree = "<group>"; };
 		742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		74BD71102AB72CD8004E97DB /* BreedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCollectionViewCell.swift; sourceTree = "<group>"; };
+		74BD71112AB72CD8004E97DB /* BreedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		742626022AB6315500C53FE1 /* BreedList */ = {
+			isa = PBXGroup;
+			children = (
+				74BD710F2AB72CA0004E97DB /* CollectionViewCell */,
+				742626072AB6326B00C53FE1 /* BreedListViewController.swift */,
+				742626082AB6326B00C53FE1 /* BreedListViewController.xib */,
+				7426260E2AB63E8E00C53FE1 /* BreedListViewModel.swift */,
+			);
+			path = BreedList;
+			sourceTree = "<group>";
+		};
+		7426260B2AB634B500C53FE1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7426260C2AB634C900C53FE1 /* UIViewController+Name.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		742D40872AB5CE9E00514A25 = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +131,10 @@
 		742D40922AB5CE9F00514A25 /* CatBreedsApp */ = {
 			isa = PBXGroup;
 			children = (
+				7426260B2AB634B500C53FE1 /* Util */,
+				742626022AB6315500C53FE1 /* BreedList */,
 				742D40932AB5CE9F00514A25 /* AppDelegate.swift */,
 				742D40952AB5CE9F00514A25 /* SceneDelegate.swift */,
-				742D40972AB5CE9F00514A25 /* ViewController.swift */,
-				742D40992AB5CE9F00514A25 /* Main.storyboard */,
 				742D409C2AB5CEA100514A25 /* Assets.xcassets */,
 				742D409E2AB5CEA100514A25 /* LaunchScreen.storyboard */,
 				742D40A12AB5CEA100514A25 /* Info.plist */,
@@ -130,6 +157,15 @@
 				742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */,
 			);
 			path = CatBreedsAppUITests;
+			sourceTree = "<group>";
+		};
+		74BD710F2AB72CA0004E97DB /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				74BD71102AB72CD8004E97DB /* BreedCollectionViewCell.swift */,
+				74BD71112AB72CD8004E97DB /* BreedCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		74CF7ED12AB5F65A000CBD35 /* Frameworks */ = {
@@ -250,8 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				742D40A02AB5CEA100514A25 /* LaunchScreen.storyboard in Resources */,
+				74BD71132AB72CD8004E97DB /* BreedCollectionViewCell.xib in Resources */,
+				7426260A2AB6326B00C53FE1 /* BreedListViewController.xib in Resources */,
 				742D409D2AB5CEA100514A25 /* Assets.xcassets in Resources */,
-				742D409B2AB5CE9F00514A25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +354,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				742D40982AB5CE9F00514A25 /* ViewController.swift in Sources */,
+				742626092AB6326B00C53FE1 /* BreedListViewController.swift in Sources */,
+				74BD71122AB72CD8004E97DB /* BreedCollectionViewCell.swift in Sources */,
 				742D40942AB5CE9F00514A25 /* AppDelegate.swift in Sources */,
+				7426260F2AB63E8E00C53FE1 /* BreedListViewModel.swift in Sources */,
+				7426260D2AB634C900C53FE1 /* UIViewController+Name.swift in Sources */,
 				742D40962AB5CE9F00514A25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,14 +396,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		742D40992AB5CE9F00514A25 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				742D409A2AB5CE9F00514A25 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		742D409E2AB5CEA100514A25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -502,7 +534,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Cat Breeds";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -531,7 +562,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Cat Breeds";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
