@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreedListViewController" customModule="CatBreedsApp" customModuleProvider="target">
             <connections>
+                <outlet property="activeIndicator" destination="52c-cd-u2I" id="EDO-ZA-Oe1"/>
                 <outlet property="collectionView" destination="BIs-XF-zJl" id="Pho-v7-usM"/>
+                <outlet property="loadingView" destination="Zrv-gF-VU1" id="Gac-ME-ChZ"/>
                 <outlet property="textField" destination="MUX-ao-3yb" id="Wt0-Xq-aum"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,7 +24,7 @@
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUX-ao-3yb">
                     <rect key="frame" x="16" y="59" width="361" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BIs-XF-zJl">
@@ -35,14 +37,31 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrv-gF-VU1">
+                    <rect key="frame" x="0.0" y="93" width="393" height="759"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="52c-cd-u2I">
+                            <rect key="frame" x="178" y="361" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="52c-cd-u2I" firstAttribute="centerY" secondItem="Zrv-gF-VU1" secondAttribute="centerY" id="BR6-wE-iob"/>
+                        <constraint firstItem="52c-cd-u2I" firstAttribute="centerX" secondItem="Zrv-gF-VU1" secondAttribute="centerX" id="rfc-B6-737"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="BIs-XF-zJl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1Ji-bf-W2C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Zrv-gF-VU1" secondAttribute="trailing" id="6K3-72-Eic"/>
+                <constraint firstItem="Zrv-gF-VU1" firstAttribute="top" secondItem="MUX-ao-3yb" secondAttribute="bottom" id="8K3-Zo-Rx5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MUX-ao-3yb" secondAttribute="trailing" constant="16" id="H07-AX-ofo"/>
+                <constraint firstItem="Zrv-gF-VU1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RBN-vk-Bw7"/>
                 <constraint firstItem="MUX-ao-3yb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="aKl-A5-iJp"/>
                 <constraint firstItem="BIs-XF-zJl" firstAttribute="top" secondItem="MUX-ao-3yb" secondAttribute="bottom" constant="8" id="bt8-58-Bcj"/>
+                <constraint firstAttribute="bottom" secondItem="Zrv-gF-VU1" secondAttribute="bottom" id="c0K-NV-eYT"/>
                 <constraint firstAttribute="bottom" secondItem="BIs-XF-zJl" secondAttribute="bottom" id="fmq-Xw-rWQ"/>
                 <constraint firstItem="MUX-ao-3yb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nDj-Bs-Aan"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BIs-XF-zJl" secondAttribute="trailing" id="ooQ-BP-oJC"/>

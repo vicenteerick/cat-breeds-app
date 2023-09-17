@@ -12,7 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = scene as? UIWindowScene else { return }
 
-        let rootViewController = BreedListViewController(viewModel: .init(dependencies: dependencies))
+        let service = BreedService(dependencies: dependencies)
+        let rootViewController = BreedListViewController(viewModel: .init(service: service))
         let navigationController = UINavigationController(rootViewController: rootViewController)
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

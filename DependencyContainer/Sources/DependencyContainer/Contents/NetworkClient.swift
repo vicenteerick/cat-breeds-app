@@ -2,17 +2,15 @@ import Foundation
 import protocol Network.ClientPublishing
 
 public protocol HasNetworkClient {
-    var networkClient: ClientPublishing { get throws }
+    var networkClient: ClientPublishing { get }
 }
 
 extension DependencyContainer: HasNetworkClient {
 
     public var networkClient: ClientPublishing {
-        get throws {
-            guard let client = resolve(type: ClientPublishing.self) else {
-                throw DependencyError.resolveError("Network Client should've been registered before being called")
-            }
-            return client
+        guard let client = resolve(type: ClientPublishing.self) else {
+            fatalError("Network Client should've been registered before being called")
         }
+        return client
     }
 }

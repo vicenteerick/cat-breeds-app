@@ -15,16 +15,14 @@ final class NetworkClientDependencyTests: XCTestCase {
         dependencyContainer = nil
     }
 
-    func testRegister_WhenTypeIsHTTPClient_ShouldHaveHTTPClientPropertyNotNil() throws {
+    func testRegister_WhenTypeIsHTTPClient_ShouldHaveHTTPClientPropertyNotNil() {
         dependencyContainer.register(type: ClientPublishing.self) { FakeClientPublisher() }
-        XCTAssertNotNil(try dependencyContainer.networkClient)
+        XCTAssertNotNil(dependencyContainer.networkClient)
     }
 
-    func testRegister_WhenTypeHTTPClient_IsNotRegistered_ShouldCallFatalError() throws {
-        do {
-            _ = try dependencyContainer.networkClient
-        } catch let error as DependencyError {
-            XCTAssertEqual(error, .resolveError("Network Client should've been registered before being called"))
+    func testRegister_WhenTypeHTTPClient_IsNotRegistered_ShouldCallFatalError() {
+        expectFatalError(expectedMessage: "Network Client should've been registered before being called") {
+            _ = self.dependencyContainer.networkClient
         }
     }
 }

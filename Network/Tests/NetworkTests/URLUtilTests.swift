@@ -16,7 +16,7 @@ final class URLUtilTests: XCTestCase {
     func testInitURL_WhenInvalid_ShouldThrowsError() throws {
         do {
             _ = try URL(baseUrl: "http://test.com:-80/", path: "")
-        } catch let error as ServiceError {
+        } catch let error as NetworkError {
             XCTAssertEqual(error, .invalidBaseUrl)
         }
     }

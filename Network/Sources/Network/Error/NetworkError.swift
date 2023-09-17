@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ServiceError: Error, Equatable {
+public enum NetworkError: Error, Equatable {
     case authenticationRequired
     case hostNotFound
     case badRequest

@@ -18,7 +18,7 @@ final class NetworkClientPublisherTests: XCTestCase {
 
     func testRequest_WhenInvalidURL_ShouldFail() {
         sut = NetworkClient(baseUrl: "http://test.com:-80/", session: urlSessionMock)
-        var serviceError: ServiceError?
+        var serviceError: NetworkError?
 
         let cancellable = sut.request(setup: endpoint).sink { [weak self] completion in
             serviceError = self?.handleRequestFailure(completion: completion)
@@ -63,7 +63,7 @@ final class NetworkClientPublisherTests: XCTestCase {
 
     func testRequest_WhenIsSuccessStatusCode_AndResponseData_ShouldReturnDecodedResponse() {
         urlSessionMock.data = "{\"response\": \"Success\"}".data(using: .utf8)
-        var serviceError: ServiceError?
+        var serviceError: NetworkError?
         var response: SuccessStub?
         let expect = expectation(description: "Success")
 
@@ -85,7 +85,7 @@ final class NetworkClientPublisherTests: XCTestCase {
 
     func testRequest_WhenIsSuccessStatusCode_AndCannotParseData_ToObjectResponse_ShouldFail() {
         urlSessionMock.data = "{\"response\": 10}".data(using: .utf8)
-        var serviceError: ServiceError?
+        var serviceError: NetworkError?
         let expect = expectation(description: "Error")
 
         let cancellable = sut.request(setup: endpoint)
@@ -102,9 +102,9 @@ final class NetworkClientPublisherTests: XCTestCase {
         XCTAssertNotNil(cancellable)
     }
 
-    private func assertFailure(urlResponse: URLResponse?, expectedError: ServiceError) {
+    private func assertFailure(urlResponse: URLResponse?, expectedError: NetworkError) {
         urlSessionMock.urlResponse = urlResponse
-        var serviceError: ServiceError?
+        var serviceError: NetworkError?
         let expect = expectation(description: "Error")
 
         let cancellable = sut.request(setup: endpoint)
@@ -127,7 +127,7 @@ final class NetworkClientPublisherTests: XCTestCase {
                         headerFields: nil)
     }
 
-    private func handleRequestFailure(completion: Subscribers.Completion<ServiceError>) -> ServiceError? {
+    private func handleRequestFailure(completion: Subscribers.Completion<NetworkError>) -> NetworkError? {
         switch completion {
         case let .failure(error):
             return error

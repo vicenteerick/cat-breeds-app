@@ -22,13 +22,13 @@ extension URLSessionDataTask: URLSessionDataTaskCancelable { }
 extension URL {
     init(baseUrl: String, path: String) throws {
         guard var components = URLComponents(string: baseUrl) else {
-            throw ServiceError.invalidBaseUrl
+            throw NetworkError.invalidBaseUrl
         }
 
         components.path += path
 
         guard let url = components.url else {
-            throw ServiceError.invalidUrl
+            throw NetworkError.invalidUrl
         }
 
         self = url

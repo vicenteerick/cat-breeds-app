@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 public protocol ClientPublishing {
-    func request<T: Decodable>(setup: Endpoint) -> AnyPublisher<T, ServiceError>
+    func request<T: Decodable>(setup: Endpoint) -> AnyPublisher<T, NetworkError>
 }
 
 public final class NetworkClient: ClientPublishing, ObservableObject {
@@ -20,26 +20,26 @@ public final class NetworkClient: ClientPublishing, ObservableObject {
         self.session = session
     }
 
-    public func request<T>(setup: Endpoint) -> AnyPublisher<T, ServiceError> where T: Decodable {
+    public func request<T>(setup: Endpoint) -> AnyPublisher<T, NetworkError> where T: Decodable {
         let request: URLRequest
 
         do {
             request = try URLRequest(baseUrl: baseUrl, setup: setup)
             print("REQUEST")
             print(request.description)
-        } catch let error as ServiceError {
+        } catch let error as NetworkError {
             print(error.localizedDescription)
-            return AnyPublisher(Fail<T, ServiceError>(error: error))
+            return AnyPublisher(Fail<T, NetworkError>(error: error))
         } catch let error {
             print(error.localizedDescription)
-            return AnyPublisher(Fail<T, ServiceError>(error: ServiceError.unknown(error.localizedDescription)))
+            return AnyPublisher(Fail<T, NetworkError>(error: NetworkError.unknown(error.localizedDescription)))
         }
 
         return session
             .dataTaskAnyPublisher(for: request)
             .tryMap { [weak self] element -> Data in
                 guard let self = self else {
-                    throw ServiceError.unknown("")
+                    throw NetworkError.unknown("")
                 }
 
                 print("RESPONSE")
@@ -47,7 +47,7 @@ public final class NetworkClient: ClientPublishing, ObservableObject {
                 print("\(String(data: element.data, encoding: .utf8) ?? "")")
 
                 guard let urlResponse = element.response as? HTTPURLResponse else {
-                    throw ServiceError.invalidHttpUrlResponse
+                    throw NetworkError.invalidHttpUrlResponse
                 }
 
                 if let error = self.handleStatusError(code: urlResponse.statusCode,
@@ -62,18 +62,18 @@ public final class NetworkClient: ClientPublishing, ObservableObject {
             .mapError { error in
                 switch error {
                 case let decodeError as DecodingError:
-                    return ServiceError.responseDecondingFailure(decodeError.localizedDescription)
-                case let serviceError as ServiceError:
+                    return NetworkError.responseDecondingFailure(decodeError.localizedDescription)
+                case let serviceError as NetworkError:
                     return serviceError
                 default:
-                    return ServiceError.unknown(error.localizedDescription)
+                    return NetworkError.unknown(error.localizedDescription)
                 }
             }
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 
-    private func handleStatusError(code: Int, data: Data) -> ServiceError? {
+    private func handleStatusError(code: Int, data: Data) -> NetworkError? {
         switch code {
         case 200...299:
             return nil
