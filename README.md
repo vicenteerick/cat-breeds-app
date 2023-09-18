@@ -20,12 +20,13 @@ Before building the project, manually create the `.env` file in the root folder.
 
 **Important:** Use `.env_template` as a guide.
 
-After creating the `.env` file, set up the environment and install all the aforementioned tools by running:
+After creating the `.env` file, set up the environment and install the tools mentioned before by running:
 
 ```shell
 make setup
 ```
 
+*Note:* Mint usually takes a long time to manage the packages during the first execution.
 
 ### Secret Management
 
