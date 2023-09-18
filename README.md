@@ -16,9 +16,8 @@ To configure and build the project, several tools are employed to streamline the
 
 #### Environment Setup and Tool Installation
 
-Before building the project, manually create the `.env` file in the root folder. This file will manage secret keys for the project.
+Before building the project, open `.env_template` and follow the instructions to manually create the `.env` file in the root folder. This file will manage secret keys for the project.
 
-**Important:** Use `.env_template` as a guide.
 
 After creating the `.env` file, set up the environment and install the tools mentioned before by running:
 
