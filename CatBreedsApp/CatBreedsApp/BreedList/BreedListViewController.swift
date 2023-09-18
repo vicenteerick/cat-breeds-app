@@ -11,7 +11,7 @@ final class BreedListViewController: UIViewController, Identifiable {
 
     private let viewModel: BreedListViewModel
     private var colelctionDataSource: CollectionDataSource<BreedCollectionViewCell, ImageInfo>!
-    private var pickerDataSource: PickerViewDataSource!
+    private var pickerDataSource: PickerViewDataSource<Breed>!
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -32,22 +32,14 @@ final class BreedListViewController: UIViewController, Identifiable {
 
     private func setupController() {
         registerCollectionCell()
-        bindViewToViewModel()
         bindViewModelToView()
-        viewModel.build()
+        viewModel.fetchBreeds()
     }
 
     private func registerCollectionCell() {
-        collectionView.register(
-            BreedCollectionViewCell.self,
-            forCellWithReuseIdentifier: BreedCollectionViewCell.identifier
-        )
-    }
-
-    private func bindViewToViewModel() {
-        textField.textPublisher
-            .sink { _ in }
-            .store(in: &cancellables)
+        collectionView.register(UINib(nibName: BreedCollectionViewCell.identifier,
+                                      bundle: .main),
+                                forCellWithReuseIdentifier: BreedCollectionViewCell.identifier)
     }
 
     private func bindViewModelToView() {
@@ -55,6 +47,13 @@ final class BreedListViewController: UIViewController, Identifiable {
             .receive(on: RunLoop.main)
             .sink { [weak self] data in
                 self?.createPickerView(data: data)
+            }
+            .store(in: &cancellables)
+
+        viewModel.$images
+            .receive(on: RunLoop.main)
+            .sink { [weak self] data in
+                self?.updateCollection(data: data)
             }
             .store(in: &cancellables)
 
@@ -81,17 +80,20 @@ final class BreedListViewController: UIViewController, Identifiable {
         collectionView.dataSource = colelctionDataSource
     }
 
-    private func createPickerView(data: [String]) {
+    private func createPickerView(data: [Breed]) {
         pickerDataSource = PickerViewDataSource(data: data)
         let pickerView = UIPickerView()
         pickerView.delegate = pickerDataSource
         textField.inputView = pickerView
         dismissPickerView()
 
-        pickerDataSource.$selectedText
+        pickerDataSource.$selectedItem
             .compactMap { $0 }
             .receive(on: RunLoop.main)
-            .assign(to: \.text, on: textField)
+            .sink { [weak self] in
+                self?.textField.text = $0.name
+                self?.viewModel.fetchImages(breedId: $0.id)
+            }
             .store(in: &cancellables)
     }
 

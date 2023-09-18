@@ -8,11 +8,14 @@ extension API.Version {
 
 enum BreedEndpoint: Endpoint {
     case all
+    case images(String)
 
     var endpoint: String {
         switch self {
         case .all:
             return "/breeds"
+        case .images:
+            return "/images/search"
         }
     }
 
@@ -20,6 +23,11 @@ enum BreedEndpoint: Endpoint {
         switch self {
         case .all:
             return [URLQueryItem(name: "limit", value: "30")]
+        case let .images(breedId):
+            return [
+                URLQueryItem(name: "limit", value: "30"),
+                URLQueryItem(name: "breed_id", value: breedId),
+            ]
         }
     }
 

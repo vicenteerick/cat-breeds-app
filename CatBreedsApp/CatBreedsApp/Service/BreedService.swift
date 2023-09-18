@@ -5,6 +5,7 @@ import Network
 
 protocol BreedServicing {
     func fetchBreeds() -> AnyPublisher<[Breed], NetworkError>
+    func fetchImages(breedId: String) -> AnyPublisher<[ImageInfo], NetworkError>
 }
 
 class BreedService: BreedServicing {
@@ -19,5 +20,9 @@ class BreedService: BreedServicing {
 
     func fetchBreeds() -> AnyPublisher<[Breed], NetworkError> {
         networkClient.request(setup: BreedEndpoint.all)
+    }
+
+    func fetchImages(breedId: String) -> AnyPublisher<[ImageInfo], Network.NetworkError> {
+        networkClient.request(setup: BreedEndpoint.images(breedId))
     }
 }

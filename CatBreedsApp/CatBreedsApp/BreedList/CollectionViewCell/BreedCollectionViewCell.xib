@@ -18,17 +18,28 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="917-h4-GJ1">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="q4H-Pc-q7S">
+                        <rect key="frame" x="140" y="152.66666666666666" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="917-h4-GJ1" secondAttribute="bottom" id="GGG-44-2Gq"/>
                 <constraint firstItem="917-h4-GJ1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="P7u-eQ-PB8"/>
+                <constraint firstItem="q4H-Pc-q7S" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="hOi-RF-L7y"/>
                 <constraint firstItem="917-h4-GJ1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ktL-dE-QK8"/>
+                <constraint firstItem="q4H-Pc-q7S" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="qxe-lM-fSU"/>
                 <constraint firstAttribute="trailing" secondItem="917-h4-GJ1" secondAttribute="trailing" id="s51-Xb-IIl"/>
             </constraints>
             <size key="customSize" width="135" height="66"/>
+            <connections>
+                <outlet property="activityIndicator" destination="q4H-Pc-q7S" id="FIp-wz-k5Q"/>
+                <outlet property="imageView" destination="917-h4-GJ1" id="ank-0D-6US"/>
+            </connections>
             <point key="canvasLocation" x="-25.190839694656489" y="25.35211267605634"/>
         </collectionViewCell>
     </objects>

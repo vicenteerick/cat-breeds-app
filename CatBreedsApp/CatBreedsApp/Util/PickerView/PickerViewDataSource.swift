@@ -1,12 +1,16 @@
 import UIKit
 
-final class PickerViewDataSource: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
-    private let data: [String]
-    @Published private(set) var selectedText: String?
+protocol PickerItem {
+    var name: String { get }
+}
 
-    init(data: [String]) {
+final class PickerViewDataSource<T: PickerItem>: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
+    private let data: [T]
+    @Published private(set) var selectedItem: T?
+
+    init(data: [T]) {
         self.data = data
-        selectedText = data.first
+        selectedItem = data.first
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -18,10 +22,10 @@ final class PickerViewDataSource: NSObject, UIPickerViewDelegate, UIPickerViewDa
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        data[row]
+        data[row].name
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedText = data[row]
+        selectedItem = data[row]
     }
 }
