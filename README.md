@@ -8,6 +8,7 @@ In order to configure and build the project, it utilizes various tools that assi
   
   - [Make](https://www.gnu.org/software/make/): Establishes rules for tool installations and build execution.
   - [Brew](https://docs.brew.sh): Manages dependencies and installations of required tools.
+  - [Mint](https://github.com/yonaskolb/Mint): Manages that installs and runs Swift command line tool packages.
   - [SwiftLint](https://github.com/realm/SwiftLint): Enforces style guidelines and conventions for Swift code.
   - [Sourcery](https://github.com/krzysztofzablocki/Sourcery): Dynamically creates secret keys in `.swift` files.
 

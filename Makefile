@@ -13,28 +13,25 @@ setup: ## Install all tools
 
 setup_tools: \
 	install_homebrew \
-	install_swiftlint \
-	install_sourcery \
+	install_mint \
+	install_mint_packages \
 	config_sourcery \
 
 install_homebrew: ## Check if Homebrew is installed, otherwise install it
 	@chmod +x "./Script/install_homebrew.sh"
 	@./Script/install_homebrew.sh
 
-install_swiftlint: ## Install swiftlint
-	@echo "Installing swiftlint..."
-	@brew install swiftlint
-	@chmod +x "./Script/swiftlint.sh"
-	@./Script/swiftlint.sh
+install_mint: ## Install Mint
+	@echo "Installing Mint..."
+	@brew install mint
+	@echo "Mint installed."
 
-install_sourcery: ## Install sourcery
-	@echo "Installing sourcery..."
-	@brew install sourcery
-	@echo "Sourcery installed."
-	@sourcery --config ".sourcery.yml"
-	@echo "Sourcery configured."
+install_mint_packages: ## Install Mint Packages
+	@echo "Installing Mint Packages..."
+	@mint bootstrap
+	@echo "Mint Packages installed."
 
 config_sourcery: ## Install sourcery
 	@echo "Configuring sourcery..."
-	@sourcery --config ".sourcery.yml"
+	@mint run sourcery --config ".sourcery.yml"
 	@echo "Sourcery configured."
