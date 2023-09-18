@@ -1,8 +1,8 @@
 # Cat Breeds
 
 ## Project Setup
-<details>
-</summary>Introduction</summary>
+
+### Introduction
 
 In order to configure and build the project, it utilizes various tools that assist in managing the process:
   
