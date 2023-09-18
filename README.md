@@ -25,7 +25,7 @@ To add a new secret key, update the `.env` file described above, the `.sourcery.
 *Note:* All files containing the secret keys, such as `.env`, and the generated file `EnvironmentVars.generated.swift`, are included in the `.gitignore`.
 *Note:* Use `.env_template` as guide.
 
-#### Set Up Local Environment and Install Tools
+#### Setup Environment and Install Tools
 
 After created `.env` file, set up the environment and install all the tools mentioned above, running:
 
