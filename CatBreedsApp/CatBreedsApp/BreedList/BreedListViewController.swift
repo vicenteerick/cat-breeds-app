@@ -10,7 +10,9 @@ final class BreedListViewController: UIViewController, Identifiable {
     @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
 
     private let viewModel: BreedListViewModel
+
     private var collectionDataSource: CollectionDataSource<BreedCollectionViewCell, ImageInfo>!
+    private var collectionDelegate: BreedCollectionViewDelegateFlowLayout!
     private var pickerDataSource: PickerViewDataSource<Breed>!
 
     private var cancellables = Set<AnyCancellable>()
@@ -26,7 +28,7 @@ final class BreedListViewController: UIViewController, Identifiable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Breeds"
         setupController()
     }
 
@@ -77,7 +79,9 @@ final class BreedListViewController: UIViewController, Identifiable {
 
     private func updateCollection(data: [ImageInfo]) {
         collectionDataSource = CollectionDataSource(items: data)
+        collectionDelegate = BreedCollectionViewDelegateFlowLayout(items: data)
         collectionView.dataSource = collectionDataSource
+        collectionView.delegate = collectionDelegate
     }
 
     private func createPickerView(data: [Breed]) {
@@ -114,6 +118,7 @@ final class BreedListViewController: UIViewController, Identifiable {
     private func showError(_ error: Error) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Retry", style: .default) { [unowned self] _ in
+            self.viewModel.fetchBreeds()
             self.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(alertAction)

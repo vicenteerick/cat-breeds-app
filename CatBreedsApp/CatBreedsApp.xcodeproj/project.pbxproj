@@ -32,6 +32,7 @@
 		74CFF7AD2AB7A0440089992C /* PickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7AC2AB7A0440089992C /* PickerViewDataSource.swift */; };
 		74CFF7B32AB7A4C70089992C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7B22AB7A4C70089992C /* UITextField+Publisher.swift */; };
 		74CFF7B62AB7C95B0089992C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 74CFF7B52AB7C95B0089992C /* Kingfisher */; };
+		74CFF7B92AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7B82AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		74CFF7AA2AB79DA20089992C /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		74CFF7AC2AB7A0440089992C /* PickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDataSource.swift; sourceTree = "<group>"; };
 		74CFF7B22AB7A4C70089992C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
+		74CFF7B82AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		742626022AB6315500C53FE1 /* BreedList */ = {
 			isa = PBXGroup;
 			children = (
+				74CFF7B72AB7E0C40089992C /* Delegate */,
 				74BD710F2AB72CA0004E97DB /* CollectionViewCell */,
 				742626072AB6326B00C53FE1 /* BreedListViewController.swift */,
 				742626082AB6326B00C53FE1 /* BreedListViewController.xib */,
@@ -242,6 +245,14 @@
 				74CFF7B22AB7A4C70089992C /* UITextField+Publisher.swift */,
 			);
 			path = Combine;
+			sourceTree = "<group>";
+		};
+		74CFF7B72AB7E0C40089992C /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				74CFF7B82AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,6 +444,7 @@
 				74CFF7B32AB7A4C70089992C /* UITextField+Publisher.swift in Sources */,
 				74CFF79F2AB77AEF0089992C /* BreedEndpoint.swift in Sources */,
 				74CFF7AB2AB79DA20089992C /* ImageInfo.swift in Sources */,
+				74CFF7B92AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift in Sources */,
 				74CFF7A72AB798680089992C /* UICollectionView+Dequeue.swift in Sources */,
 				74CFF7A52AB797ED0089992C /* ViewCellHandler.swift in Sources */,
 				74CFF79B2AB775520089992C /* BreedService.swift in Sources */,

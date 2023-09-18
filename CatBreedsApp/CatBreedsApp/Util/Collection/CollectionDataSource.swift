@@ -1,8 +1,7 @@
 import UIKit
 
 final class CollectionDataSource<Cell: UICollectionViewCell, Item>: NSObject, UICollectionViewDataSource where Cell: ViewCellHandler, Item == Cell.Item {
-
-    let items: [Item]
+    private let items: [Item]
 
     init(items: [Item]) {
         self.items = items
