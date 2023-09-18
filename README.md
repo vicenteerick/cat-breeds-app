@@ -14,13 +14,6 @@ In order to configure and build the project, it utilizes various tools that assi
 
 ### Commands
 
-#### Set Up Local Environment and Install Tools
-
-To set up the environment and install all the tools mentioned above, run:
-
-`make setup`
-
-
 #### Secret Management
 
 Before building the project, you need to create the file `.env` in the root folder. These file will manage secret keys for the project.
@@ -32,3 +25,8 @@ To add a new secret key, update the `.env` file described above, the `.sourcery.
 *Note:* All files containing the secret keys, such as `.env`, and the generated file `EnvironmentVars.generated.swift`, are included in the `.gitignore`.
 *Note:* Use `.env_template` as guide.
 
+#### Set Up Local Environment and Install Tools
+
+After created `.env` file, set up the environment and install all the tools mentioned above, running:
+
+`make setup`
