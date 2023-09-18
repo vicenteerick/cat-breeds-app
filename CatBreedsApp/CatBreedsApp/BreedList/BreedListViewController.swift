@@ -10,7 +10,7 @@ final class BreedListViewController: UIViewController, Identifiable {
     @IBOutlet weak var activeIndicator: UIActivityIndicatorView!
 
     private let viewModel: BreedListViewModel
-    private var colelctionDataSource: CollectionDataSource<BreedCollectionViewCell, ImageInfo>!
+    private var collectionDataSource: CollectionDataSource<BreedCollectionViewCell, ImageInfo>!
     private var pickerDataSource: PickerViewDataSource<Breed>!
 
     private var cancellables = Set<AnyCancellable>()
@@ -76,8 +76,8 @@ final class BreedListViewController: UIViewController, Identifiable {
     }
 
     private func updateCollection(data: [ImageInfo]) {
-        colelctionDataSource = CollectionDataSource(items: data)
-        collectionView.dataSource = colelctionDataSource
+        collectionDataSource = CollectionDataSource(items: data)
+        collectionView.dataSource = collectionDataSource
     }
 
     private func createPickerView(data: [Breed]) {

@@ -12,7 +12,10 @@ class BreedCollectionViewCell: UICollectionViewCell, ViewCellHandler {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        bindData()
+    }
 
+    private func bindData() {
         $data
             .compactMap { $0 }
             .sink { [weak imageView, activityIndicator] item in
