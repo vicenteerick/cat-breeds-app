@@ -5,13 +5,13 @@
       location = "group:CatBreedsApp/CatBreedsApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/erickvicente/Documents/Projetos/cat-breeds-app/DependencyContainer">
+      location = "group:DependencyContainer">
    </FileRef>
    <FileRef
-      location = "group:/Users/erickvicente/Documents/Projetos/cat-breeds-app/Network">
+      location = "group:Network">
    </FileRef>
    <FileRef
-      location = "group:/Users/erickvicente/Documents/Projetos/cat-breeds-app/SharedSource">
+      location = "group:SharedSource">
    </FileRef>
    <FileRef
       location = "group:CatBreedsApp.xctestplan">
