@@ -26,7 +26,8 @@ After creating the `.env` file, set up the environment and install all the afore
 make setup
 ```
 
-#### Secret Management
+
+### Secret Management
 
 To safeguard sensitive data, configure the `.env` file locally, ensuring that sensitive information is not pushed to the repository.
 
