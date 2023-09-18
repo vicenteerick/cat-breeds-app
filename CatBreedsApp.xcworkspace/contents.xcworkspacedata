@@ -13,4 +13,7 @@
    <FileRef
       location = "group:/Users/erickvicente/Documents/Projetos/cat-breeds-app/SharedSource">
    </FileRef>
+   <FileRef
+      location = "group:CatBreedsApp.xctestplan">
+   </FileRef>
 </Workspace>

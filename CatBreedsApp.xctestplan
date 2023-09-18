@@ -1,0 +1,59 @@
+{
+  "configurations" : [
+    {
+      "id" : "D3920710-0FDF-425F-A181-0284EA97BB06",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "language" : "en",
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CatBreedsApp.xcodeproj",
+      "identifier" : "742D408F2AB5CE9F00514A25",
+      "name" : "CatBreedsApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CatBreedsApp.xcodeproj",
+        "identifier" : "742D40A52AB5CEA100514A25",
+        "name" : "CatBreedsAppTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CatBreedsApp.xcodeproj",
+        "identifier" : "742D40AF2AB5CEA100514A25",
+        "name" : "CatBreedsAppUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/DependencyContainer",
+        "identifier" : "DependencyContainerTests",
+        "name" : "DependencyContainerTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/Network",
+        "identifier" : "NetworkTests",
+        "name" : "NetworkTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/SharedSource",
+        "identifier" : "SharedSourceTests",
+        "name" : "SharedSourceTests"
+      }
+    }
+  ],
+  "version" : 1
+}
