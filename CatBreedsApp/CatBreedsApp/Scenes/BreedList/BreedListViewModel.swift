@@ -18,6 +18,7 @@ final class BreedListViewModel {
 
     @Published private(set) var breeds: [Breed] = []
     @Published private(set) var images: [ImageInfo] = []
+    @Published private(set) var detailModel: BreedDetailViewModel?
     @Published private(set) var state: BreedListViewModelState = .loading
 
     private var service: BreedServicing
@@ -73,5 +74,9 @@ extension BreedListViewModel {
             .sink(receiveCompletion: fetchImagesCompletionHandler,
                   receiveValue: fetchImagesValueHandler)
             .store(in: &cancellables)
+    }
+
+    func selectItem(imageInfo: ImageInfo) {
+        detailModel = BreedDetailViewModel(info: imageInfo)
     }
 }

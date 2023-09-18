@@ -5,4 +5,5 @@ struct ImageInfo: Decodable {
     let url: URL
     let width: Int
     let height: Int
+    let breeds: [Breed]
 }

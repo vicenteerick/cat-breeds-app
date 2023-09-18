@@ -3,6 +3,8 @@ import UIKit
 class BreedCollectionViewDelegateFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
     private let items: [ImageInfo]
 
+    @Published private(set) var selectedItem: ImageInfo?
+
     init(items: [ImageInfo]) {
         self.items = items
     }
@@ -17,5 +19,9 @@ class BreedCollectionViewDelegateFlowLayout: NSObject, UICollectionViewDelegateF
         let height = floor(collectionView.frame.width / ratio)
 
         return CGSize(width: collectionView.frame.width, height: height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItem = items[indexPath.row]
     }
 }

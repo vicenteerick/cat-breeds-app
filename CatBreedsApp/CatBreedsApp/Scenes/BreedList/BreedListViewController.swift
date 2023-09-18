@@ -19,7 +19,7 @@ final class BreedListViewController: UIViewController, Identifiable {
 
     init(viewModel: BreedListViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: BreedListViewController.identifier, bundle: .main)
+        super.init(nibName: Self.identifier, bundle: .main)
     }
 
     required init?(coder: NSCoder) {
@@ -59,6 +59,14 @@ final class BreedListViewController: UIViewController, Identifiable {
             }
             .store(in: &cancellables)
 
+        viewModel.$detailModel
+            .receive(on: RunLoop.main)
+            .compactMap { $0 }
+            .sink { [weak self] viewModel in
+                self?.navigateToDetail(viewModel: viewModel)
+            }
+            .store(in: &cancellables)
+
         let stateValueHandler: (BreedListViewModelState) -> Void = { [weak self] state in
             switch state {
             case .loading:
@@ -82,6 +90,14 @@ final class BreedListViewController: UIViewController, Identifiable {
         collectionDelegate = BreedCollectionViewDelegateFlowLayout(items: data)
         collectionView.dataSource = collectionDataSource
         collectionView.delegate = collectionDelegate
+
+        collectionDelegate.$selectedItem
+            .receive(on: RunLoop.main)
+            .compactMap { $0 }
+            .sink { [weak self] in
+                self?.viewModel.selectItem(imageInfo: $0)
+            }
+            .store(in: &cancellables)
     }
 
     private func createPickerView(data: [Breed]) {
@@ -123,5 +139,10 @@ final class BreedListViewController: UIViewController, Identifiable {
         }
         alertController.addAction(alertAction)
         present(alertController, animated: true, completion: nil)
+    }
+
+    private func navigateToDetail(viewModel: BreedDetailViewModel) {
+        let viewController = BreedDetailViewController(viewModel: viewModel)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

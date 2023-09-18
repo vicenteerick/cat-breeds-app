@@ -19,6 +19,9 @@
 		742D40AB2AB5CEA100514A25 /* CatBreedsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40AA2AB5CEA100514A25 /* CatBreedsAppTests.swift */; };
 		742D40B52AB5CEA100514A25 /* CatBreedsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B42AB5CEA100514A25 /* CatBreedsAppUITests.swift */; };
 		742D40B72AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */; };
+		749EC63B2AB8627B000E92EE /* BreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EC6392AB8627B000E92EE /* BreedDetailViewController.swift */; };
+		749EC63C2AB8627B000E92EE /* BreedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749EC63A2AB8627B000E92EE /* BreedDetailViewController.xib */; };
+		749EC63E2AB86601000E92EE /* BreedDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749EC63D2AB86601000E92EE /* BreedDetailViewModel.swift */; };
 		74BD71122AB72CD8004E97DB /* BreedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BD71102AB72CD8004E97DB /* BreedCollectionViewCell.swift */; };
 		74BD71132AB72CD8004E97DB /* BreedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BD71112AB72CD8004E97DB /* BreedCollectionViewCell.xib */; };
 		74CFF79B2AB775520089992C /* BreedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF79A2AB775520089992C /* BreedService.swift */; };
@@ -30,7 +33,6 @@
 		74CFF7A92AB7987F0089992C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7A82AB7987F0089992C /* Identifiable.swift */; };
 		74CFF7AB2AB79DA20089992C /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7AA2AB79DA20089992C /* ImageInfo.swift */; };
 		74CFF7AD2AB7A0440089992C /* PickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7AC2AB7A0440089992C /* PickerViewDataSource.swift */; };
-		74CFF7B32AB7A4C70089992C /* UITextField+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7B22AB7A4C70089992C /* UITextField+Publisher.swift */; };
 		74CFF7B62AB7C95B0089992C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 74CFF7B52AB7C95B0089992C /* Kingfisher */; };
 		74CFF7B92AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CFF7B82AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,9 @@
 		742D40B02AB5CEA100514A25 /* CatBreedsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatBreedsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		742D40B42AB5CEA100514A25 /* CatBreedsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedsAppUITests.swift; sourceTree = "<group>"; };
 		742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		749EC6392AB8627B000E92EE /* BreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewController.swift; sourceTree = "<group>"; };
+		749EC63A2AB8627B000E92EE /* BreedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedDetailViewController.xib; sourceTree = "<group>"; };
+		749EC63D2AB86601000E92EE /* BreedDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewModel.swift; sourceTree = "<group>"; };
 		74BD71102AB72CD8004E97DB /* BreedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCollectionViewCell.swift; sourceTree = "<group>"; };
 		74BD71112AB72CD8004E97DB /* BreedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedCollectionViewCell.xib; sourceTree = "<group>"; };
 		74CFF79A2AB775520089992C /* BreedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedService.swift; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 		74CFF7A82AB7987F0089992C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		74CFF7AA2AB79DA20089992C /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		74CFF7AC2AB7A0440089992C /* PickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDataSource.swift; sourceTree = "<group>"; };
-		74CFF7B22AB7A4C70089992C /* UITextField+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Publisher.swift"; sourceTree = "<group>"; };
 		74CFF7B82AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCollectionViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				74CFF7AE2AB7A42D0089992C /* Collection */,
-				74CFF7B12AB7A4A00089992C /* Combine */,
 				74CFF7AF2AB7A4400089992C /* PickerView */,
 				74CFF7A82AB7987F0089992C /* Identifiable.swift */,
 			);
@@ -157,10 +160,10 @@
 		742D40922AB5CE9F00514A25 /* CatBreedsApp */ = {
 			isa = PBXGroup;
 			children = (
+				749EC6352AB86070000E92EE /* Scenes */,
 				74CFF7992AB7753A0089992C /* Model */,
 				74CFF7982AB7744E0089992C /* Service */,
 				7426260B2AB634B500C53FE1 /* Util */,
-				742626022AB6315500C53FE1 /* BreedList */,
 				742D40932AB5CE9F00514A25 /* AppDelegate.swift */,
 				742D40952AB5CE9F00514A25 /* SceneDelegate.swift */,
 				742D409C2AB5CEA100514A25 /* Assets.xcassets */,
@@ -185,6 +188,25 @@
 				742D40B62AB5CEA100514A25 /* CatBreedsAppUITestsLaunchTests.swift */,
 			);
 			path = CatBreedsAppUITests;
+			sourceTree = "<group>";
+		};
+		749EC6352AB86070000E92EE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				749EC6362AB8607D000E92EE /* BreedDetail */,
+				742626022AB6315500C53FE1 /* BreedList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		749EC6362AB8607D000E92EE /* BreedDetail */ = {
+			isa = PBXGroup;
+			children = (
+				749EC6392AB8627B000E92EE /* BreedDetailViewController.swift */,
+				749EC63A2AB8627B000E92EE /* BreedDetailViewController.xib */,
+				749EC63D2AB86601000E92EE /* BreedDetailViewModel.swift */,
+			);
+			path = BreedDetail;
 			sourceTree = "<group>";
 		};
 		74BD710F2AB72CA0004E97DB /* CollectionViewCell */ = {
@@ -237,14 +259,6 @@
 				74CFF7AC2AB7A0440089992C /* PickerViewDataSource.swift */,
 			);
 			path = PickerView;
-			sourceTree = "<group>";
-		};
-		74CFF7B12AB7A4A00089992C /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				74CFF7B22AB7A4C70089992C /* UITextField+Publisher.swift */,
-			);
-			path = Combine;
 			sourceTree = "<group>";
 		};
 		74CFF7B72AB7E0C40089992C /* Delegate */ = {
@@ -371,6 +385,7 @@
 			files = (
 				742D40A02AB5CEA100514A25 /* LaunchScreen.storyboard in Resources */,
 				74BD71132AB72CD8004E97DB /* BreedCollectionViewCell.xib in Resources */,
+				749EC63C2AB8627B000E92EE /* BreedDetailViewController.xib in Resources */,
 				7426260A2AB6326B00C53FE1 /* BreedListViewController.xib in Resources */,
 				742D409D2AB5CEA100514A25 /* Assets.xcassets in Resources */,
 			);
@@ -440,9 +455,10 @@
 			files = (
 				74CFF79D2AB7767A0089992C /* Breed.swift in Sources */,
 				74CFF7AD2AB7A0440089992C /* PickerViewDataSource.swift in Sources */,
+				749EC63B2AB8627B000E92EE /* BreedDetailViewController.swift in Sources */,
 				742626092AB6326B00C53FE1 /* BreedListViewController.swift in Sources */,
-				74CFF7B32AB7A4C70089992C /* UITextField+Publisher.swift in Sources */,
 				74CFF79F2AB77AEF0089992C /* BreedEndpoint.swift in Sources */,
+				749EC63E2AB86601000E92EE /* BreedDetailViewModel.swift in Sources */,
 				74CFF7AB2AB79DA20089992C /* ImageInfo.swift in Sources */,
 				74CFF7B92AB7E0D90089992C /* BreedCollectionViewDelegateFlowLayout.swift in Sources */,
 				74CFF7A72AB798680089992C /* UICollectionView+Dequeue.swift in Sources */,
